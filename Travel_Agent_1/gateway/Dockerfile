@@ -45,7 +45,7 @@ RUN pip wheel .
 FROM base as install
 
 # Copy wheel files from builder stage
-FROM nameko-example-base as install
+# FROM nameko-example-base as install
 
 COPY --from=builder /application/wheelhouse /wheelhouse
 
