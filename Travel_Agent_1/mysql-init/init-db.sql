@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2024 at 01:43 PM
+-- Generation Time: Jun 25, 2024 at 04:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -203,14 +203,14 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_date`, `number_of_people`, `quota`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Tokyo Delight', 'Enjoy a delightful 3-day trip to Tokyo with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 6, 16500000, 'tokyo_delight.jpg', NULL, NULL),
-(2, 'Bali Escape', 'A relaxing 2-day escape to Bali with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 11, 13200000, 'bali_escape.jpg', NULL, NULL),
-(3, 'Paris Adventure', 'A 3-day adventure in Paris with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 15, 33000000, 'paris_adventure.jpg', NULL, NULL),
-(4, 'Bangkok Getaway', 'A quick 2-day getaway to Bangkok with shopping and sightseeing', '2024-08-10', '2024-08-11', '2', 21, 14800000, 'bangkok_getaway.jpg', NULL, NULL),
-(5, 'Sydney Explorer', 'Explore Sydney over a 3-day period with visits to iconic spots.', '2024-09-01', '2024-09-03', '3', 26, 20000000, 'sydney_explorer.jpg', NULL, NULL),
-(6, 'Bali Retreat', 'Explore Bali including Tanah Lot and Uluwatu Temple', '2024-06-18', '2024-06-20', '2', 17, 8000000, 'bali_retreat.jpg', NULL, NULL),
-(7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 11, 12000000, 'yogyakarta_journey.jpg', NULL, NULL),
-(8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 10000000, 'singapore_trip.jpg', NULL, NULL);
+(1, 'Tokyo Delight', 'Enjoy a delightful 3-day trip to Tokyo with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 6, 16500000, 'https://travelagentimages.s3.amazonaws.com/tokyo_delight.jpg', NULL, NULL),
+(2, 'Bali Escape', 'A relaxing 2-day escape to Bali with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 11, 13200000, 'https://travelagentimages.s3.amazonaws.com/bali_escape.jpg', NULL, NULL),
+(3, 'Paris Adventure', 'A 3-day adventure in Paris with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 15, 33000000, 'https://travelagentimages.s3.amazonaws.com/paris_adventure.jpg', NULL, NULL),
+(4, 'Bangkok Getaway', 'A quick 2-day getaway to Bangkok with shopping and sightseeing', '2024-08-10', '2024-08-11', '2', 21, 14800000, 'https://travelagentimages.s3.amazonaws.com/bangkok_getaway.jpg', NULL, NULL),
+(5, 'Sydney Explorer', 'Explore Sydney over a 3-day period with visits to iconic spots.', '2024-09-01', '2024-09-03', '3', 26, 20000000, 'https://travelagentimages.s3.amazonaws.com/sydney_explorer.jpg', NULL, NULL),
+(6, 'Bali Retreat', 'Explore Bali including Tanah Lot and Uluwatu Temple', '2024-06-18', '2024-06-20', '2', 17, 8000000, 'https://travelagentimages.s3.amazonaws.com/bali_retreat.jpg', NULL, NULL),
+(7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 11, 12000000, 'https://travelagentimages.s3.amazonaws.com/yogyakarta_journey.jpg', NULL, NULL),
+(8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 10000000, 'https://travelagentimages.s3.amazonaws.com/singapore_trip.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 

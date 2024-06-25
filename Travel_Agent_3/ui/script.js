@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data.forEach(element => {
                 temp += `
                     <div class="package-card">
-                        <img src="asset/${element.image}" alt="Package 1">
+                        <img src="${element.image}" alt="Package 1">
                         <div class="package-details">
                             <br>
                             <h3>${element.name}</h3>

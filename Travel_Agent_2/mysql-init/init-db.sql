@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2024 at 01:43 PM
+-- Generation Time: Jun 25, 2024 at 04:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -159,10 +159,10 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_date`, `number_of_people`, `quota`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Maldives Honeymoon', 'Enjoy a delightful 3-day trip to Maldives with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 10, 20000000, 'maldives_honeymoon.jpg', NULL, NULL),
-(2, 'Japan Arcade', 'A relaxing 2-day escape to Japan with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 15, 15200000, 'japan_arcade.jpg', NULL, NULL),
-(3, 'Labuan Bajo Escape', 'A 3-day adventure in Labuan Bajo with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 20, 6000000, 'labuan_bajo_escape.jpg', NULL, NULL),
-(4, 'Korea Sonata', 'A quick 2-day getaway to Korea with shopping and sightseeing', '2024-08-10', '2024-08-11', '3', 25, 15000000, 'korea_sonata.jpg', NULL, NULL);
+(1, 'Maldives Honeymoon', 'Enjoy a delightful 3-day trip to Maldives with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 10, 20000000, 'https://travelagentimages.s3.amazonaws.com/maldives_honeymoon.jpg', NULL, NULL),
+(2, 'Japan Arcade', 'A relaxing 2-day escape to Japan with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 15, 15200000, 'https://travelagentimages.s3.amazonaws.com/japan_arcade.jpg', NULL, NULL),
+(3, 'Labuan Bajo Escape', 'A 3-day adventure in Labuan Bajo with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 20, 6000000, 'https://travelagentimages.s3.amazonaws.com/labuan_bajo_escape.jpg', NULL, NULL),
+(4, 'Korea Sonata', 'A quick 2-day getaway to Korea with shopping and sightseeing', '2024-08-10', '2024-08-11', '3', 25, 15000000, 'https://travelagentimages.s3.amazonaws.com/korea_sonata.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
