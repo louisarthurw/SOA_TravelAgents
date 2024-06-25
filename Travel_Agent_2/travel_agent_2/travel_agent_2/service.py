@@ -1,6 +1,6 @@
 import json
 from nameko.rpc import rpc
-import dependencies
+from travel_agent_2 import dependencies
 
 class TravelAgent2:
     name = 'travel_agent_2'

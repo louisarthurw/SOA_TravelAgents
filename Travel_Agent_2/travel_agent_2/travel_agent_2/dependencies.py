@@ -106,10 +106,10 @@ class Database(DependencyProvider):
                 pool_name="database_pool",
                 pool_size=10,
                 pool_reset_session=True,
-                host='localhost',
+                host='mysql',
                 database='travel_agent_2',
                 user='root',
-                password=''
+                password='password'
             )
         except Error as e :
             print ("Error while connecting to MySQL using Connection pool ", e)
