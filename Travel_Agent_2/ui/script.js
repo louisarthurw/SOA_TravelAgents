@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function fetchBookingsData() {
-        const response = await fetch('http://174.129.21.218:8005/travel-agent-2/bookings', {
+        const response = await fetch('http://174.129.21.218:8005/travel-agent/bookings', {
             method: "GET"
         });
 
@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
             let response;
 
             if (originCity == null || destinationCity == null || minimimNumberOfPerson == null || departureDate == null || returnDate == null) {
-                response = await fetch('http://174.129.21.218:8005/travel-agent-2/packages', {
+                response = await fetch('http://174.129.21.218:8005/travel-agent/packages', {
                     method: "GET"
                 });
             } else {
-                response = await fetch(`http://174.129.21.218:8005/travel-agent-2/filter?origin_city=${originCity}&destination_city=${destinationCity}&number_of_people=${minimimNumberOfPerson}&departure_date=${departureDate}&return_date=${returnDate}`, {
+                response = await fetch(`http://174.129.21.218:8005/travel-agent/filter?origin_city=${originCity}&destination_city=${destinationCity}&number_of_people=${minimimNumberOfPerson}&departure_date=${departureDate}&return_date=${returnDate}`, {
                     method: "GET",
                 });
             }
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (result.isConfirmed) {
                         const id_package = this.getAttribute('data-package')
 
-                        const response = await fetch(`http://174.129.21.218:8005/travel-agent-2/book`, {
+                        const response = await fetch(`http://174.129.21.218:8005/travel-agent/book`, {
                             method: "POST",
                             body: JSON.stringify({
                                 user_id: "1",
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             element.addEventListener("click", async function () {
                 const packageId = this.getAttribute('data-package');
                 // console.log(packageId);
-                const response = await fetch(`http://174.129.21.218:8005/travel-agent-2/package_details/${packageId}`, {
+                const response = await fetch(`http://174.129.21.218:8005/travel-agent/package_details/${packageId}`, {
                     method: "GET"
                 });
                 if (!response.ok) {
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             confirmButtonText: "Buy",
                         }).then(async (result) => {
                             if (result.isConfirmed) {
-                                const response = await fetch(`http://174.129.21.218:8005/travel-agent-2/book`, {
+                                const response = await fetch(`http://174.129.21.218:8005/travel-agent/book`, {
                                     method: "POST",
                                     body: JSON.stringify({
                                         user_id: "1",
