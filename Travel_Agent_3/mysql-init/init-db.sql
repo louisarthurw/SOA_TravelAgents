@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2024 at 04:03 PM
+-- Generation Time: Jun 25, 2024 at 04:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -159,10 +159,10 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_date`, `number_of_people`, `quota`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Ancient Egypt Tour', 'Explore the ancient wonders of Egypt', '2024-07-01', '2024-07-03', '20', 15, 5000000, 'https://travelagentimages.s3.amazonaws.com/egypt_tour.jpg', NULL, NULL),
-(2, 'Jordan Adventure', 'Discover the hidden gems of Jordan', '2024-07-10', '2024-07-11', '25', 20, 4500000, 'https://travelagentimages.s3.amazonaws.com/jordan_adventure.jpg', NULL, NULL),
-(3, 'Mystical India', 'Experience the rich heritage of India', '2024-08-01', '2024-08-03', '30', 25, 6000000, 'https://travelagentimages.s3.amazonaws.com/mystical_india.jpg', NULL, NULL),
-(4, 'Guilin Trip', 'Walk through the historic sites of China', '2024-08-10', '2024-08-11', '20', 15, 5500000, 'https://travelagentimages.s3.amazonaws.com/guilin_trip.jpg', NULL, NULL);
+(1, 'Ancient Egypt Tour', 'Explore the ancient wonders of Egypt', '2024-07-01', '2024-07-03', '4', 15, 30000000, 'https://travelagentimages.s3.amazonaws.com/egypt_tour.jpg', NULL, NULL),
+(2, 'Jordan Adventure', 'Discover the hidden gems of Jordan', '2024-07-10', '2024-07-11', '5', 20, 22500000, 'https://travelagentimages.s3.amazonaws.com/jordan_adventure.jpg', NULL, NULL),
+(3, 'Mystical India', 'Experience the rich heritage of India', '2024-08-01', '2024-08-03', '2', 25, 15000000, 'https://travelagentimages.s3.amazonaws.com/mystical_india.jpg', NULL, NULL),
+(4, 'Guilin Trip', 'Walk through the historic sites of China', '2024-08-10', '2024-08-11', '3', 15, 25000000, 'https://travelagentimages.s3.amazonaws.com/guilin_trip.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
