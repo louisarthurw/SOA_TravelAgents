@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2024 at 04:42 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jun 23, 2024 at 04:39 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `travel_agent_2`
+-- Database: `travel_agent_3`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `attraction_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `package_details_id` bigint(20) UNSIGNED NOT NULL,
-  `attraction_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attraction_name` varchar(255) NOT NULL,
   `visit_date` date NOT NULL,
   `entry_fee` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -42,14 +42,14 @@ CREATE TABLE `attraction_details` (
 --
 
 INSERT INTO `attraction_details` (`id`, `package_details_id`, `attraction_name`, `visit_date`, `entry_fee`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Great Wall of China', '2024-07-01', 200000, NULL, NULL),
+(1, 1, 'Disney Land', '2024-07-01', 1000000, NULL, NULL),
 (2, 2, 'Tokyo National Museum', '2024-07-02', 500000, NULL, NULL),
 (3, 3, 'Ueno Park', '2024-07-03', 0, NULL, NULL),
 (4, 4, 'Tanah Lot', '2024-07-10', 300000, NULL, NULL),
 (5, 5, 'Uluwatu Temple', '2024-07-11', 250000, NULL, NULL),
 (6, 6, 'Eiffel Tower', '2024-08-01', 2500000, NULL, NULL),
 (7, 7, 'Louvre Museum', '2024-08-02', 1500000, NULL, NULL),
-(8, 8, 'Notre Dame', '2024-08-03', 200000, NULL, NULL),
+(8, 8, 'Notre Dame', '2024-08-03', 1000000, NULL, NULL),
 (9, 9, 'Grand Palace', '2024-08-10', 500000, NULL, NULL),
 (10, 10, 'Chatuchak Market', '2024-08-11', 0, NULL, NULL),
 (11, 11, 'Sydney Opera House', '2024-09-01', 2000000, NULL, NULL),
@@ -95,11 +95,11 @@ INSERT INTO `booking` (`id`, `user_id`, `package_id`, `created_at`, `updated_at`
 CREATE TABLE `flight_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `package_details_id` bigint(20) UNSIGNED NOT NULL,
-  `airline_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `flight_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `departure_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `arrival_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `flight_class` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `airline_name` varchar(255) NOT NULL,
+  `flight_number` varchar(255) NOT NULL,
+  `departure_time` varchar(255) NOT NULL,
+  `arrival_time` varchar(255) NOT NULL,
+  `flight_class` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -141,9 +141,9 @@ INSERT INTO `flight_details` (`id`, `package_details_id`, `airline_name`, `fligh
 CREATE TABLE `hotel_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `package_details_id` bigint(20) UNSIGNED NOT NULL,
-  `hotel_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `room_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hotel_name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `room_type` varchar(255) NOT NULL,
   `room_number` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -185,7 +185,7 @@ INSERT INTO `hotel_details` (`id`, `package_details_id`, `hotel_name`, `address`
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -212,14 +212,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `package` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `departure_date` date NOT NULL,
   `return_date` date NOT NULL,
-  `number_of_people` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number_of_people` varchar(255) NOT NULL,
   `quota` int(11) NOT NULL,
   `price` int(11) NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -236,7 +236,7 @@ INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_da
 (5, 'Sydney Explorer', 'Explore Sydney over a 3-day period with visits to iconic spots.', '2024-09-01', '2024-09-03', '3', 26, 20000000, 'sydney_explorer.jpg', NULL, NULL),
 (6, 'Bali Retreat', 'Explore Bali including Tanah Lot and Uluwatu Temple', '2024-06-18', '2024-06-20', '2', 17, 8000000, 'bali_retreat.jpg', NULL, NULL),
 (7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 12, 12000000, 'yogyakarta_journey.jpg', NULL, NULL),
-(8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 2000000, 'singapore_trip.jpg', NULL, NULL);
+(8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 10000000, 'singapore_trip.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -248,9 +248,9 @@ CREATE TABLE `package_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `package_id` bigint(20) UNSIGNED NOT NULL,
   `day` int(11) NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `origin_city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `destination_city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `origin_city` varchar(255) NOT NULL,
+  `destination_city` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -291,9 +291,9 @@ INSERT INTO `package_details` (`id`, `package_id`, `day`, `description`, `origin
 
 CREATE TABLE `travel_agent` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -303,7 +303,7 @@ CREATE TABLE `travel_agent` (
 --
 
 INSERT INTO `travel_agent` (`id`, `name`, `email`, `phone_number`, `created_at`, `updated_at`) VALUES
-(1, 'Louis Tour', 'louistour@gmail.com', '08123456789', NULL, NULL);
+(1, 'Timothy Tour', 'timothytour@gmail.com', '08123456789', NULL, NULL);
 
 -- --------------------------------------------------------
 

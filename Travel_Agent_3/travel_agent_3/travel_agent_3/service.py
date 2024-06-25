@@ -1,9 +1,9 @@
 import json
 from nameko.rpc import rpc
-import dependencies
+from travel_agent_3 import dependencies
 
-class TravelAgent2:
-    name = 'travel_agent_2'
+class TravelAgent3:
+    name = 'travel_agent_3'
 
     database = dependencies.Database()
 
