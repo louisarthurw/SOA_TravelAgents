@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2024 at 04:39 PM
+-- Generation Time: Jun 25, 2024 at 01:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project_soa`
+-- Database: `travel_agent_1`
 --
 
 -- --------------------------------------------------------
@@ -84,7 +84,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `user_id`, `package_id`, `created_at`, `updated_at`) VALUES
-(11, 1, 3, NULL, NULL);
+(11, 1, 3, NULL, NULL),
+(12, 1, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -180,33 +181,6 @@ INSERT INTO `hotel_details` (`id`, `package_details_id`, `hotel_name`, `address`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(22, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(23, '2024_05_24_062440_create_travel_agent_table', 1),
-(24, '2024_05_29_072123_create_package_table', 1),
-(25, '2024_05_29_072340_create_package_details_table', 1),
-(26, '2024_06_02_155830_create_hotel_details_table', 1),
-(27, '2024_06_02_155841_create_flight_details_table', 1),
-(28, '2024_06_02_155854_create_attraction_details_table', 1),
-(29, '2024_06_14_033817_create_user_table', 1),
-(30, '2024_06_14_033818_create_booking_table', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `package`
 --
 
@@ -235,7 +209,7 @@ INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_da
 (4, 'Bangkok Getaway', 'A quick 2-day getaway to Bangkok with shopping and sightseeing', '2024-08-10', '2024-08-11', '2', 21, 14800000, 'bangkok_getaway.jpg', NULL, NULL),
 (5, 'Sydney Explorer', 'Explore Sydney over a 3-day period with visits to iconic spots.', '2024-09-01', '2024-09-03', '3', 26, 20000000, 'sydney_explorer.jpg', NULL, NULL),
 (6, 'Bali Retreat', 'Explore Bali including Tanah Lot and Uluwatu Temple', '2024-06-18', '2024-06-20', '2', 17, 8000000, 'bali_retreat.jpg', NULL, NULL),
-(7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 12, 12000000, 'yogyakarta_journey.jpg', NULL, NULL),
+(7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 11, 12000000, 'yogyakarta_journey.jpg', NULL, NULL),
 (8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 10000000, 'singapore_trip.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -358,12 +332,6 @@ ALTER TABLE `hotel_details`
   ADD KEY `hotel_details_package_details_id_foreign` (`package_details_id`);
 
 --
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `package`
 --
 ALTER TABLE `package`
@@ -402,7 +370,7 @@ ALTER TABLE `attraction_details`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `flight_details`
@@ -415,12 +383,6 @@ ALTER TABLE `flight_details`
 --
 ALTER TABLE `hotel_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `package`

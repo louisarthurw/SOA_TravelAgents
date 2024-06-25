@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2024 at 04:39 PM
+-- Generation Time: Jun 25, 2024 at 01:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,28 +42,16 @@ CREATE TABLE `attraction_details` (
 --
 
 INSERT INTO `attraction_details` (`id`, `package_details_id`, `attraction_name`, `visit_date`, `entry_fee`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Disney Land', '2024-07-01', 1000000, NULL, NULL),
-(2, 2, 'Tokyo National Museum', '2024-07-02', 500000, NULL, NULL),
-(3, 3, 'Ueno Park', '2024-07-03', 0, NULL, NULL),
-(4, 4, 'Tanah Lot', '2024-07-10', 300000, NULL, NULL),
-(5, 5, 'Uluwatu Temple', '2024-07-11', 250000, NULL, NULL),
-(6, 6, 'Eiffel Tower', '2024-08-01', 2500000, NULL, NULL),
-(7, 7, 'Louvre Museum', '2024-08-02', 1500000, NULL, NULL),
-(8, 8, 'Notre Dame', '2024-08-03', 1000000, NULL, NULL),
-(9, 9, 'Grand Palace', '2024-08-10', 500000, NULL, NULL),
-(10, 10, 'Chatuchak Market', '2024-08-11', 0, NULL, NULL),
-(11, 11, 'Sydney Opera House', '2024-09-01', 2000000, NULL, NULL),
-(12, 12, 'Bondi Beach', '2024-09-02', 0, NULL, NULL),
-(13, 13, 'Taronga Zoo', '2024-09-03', 350000, NULL, NULL),
-(14, 14, 'Tanah Lot', '2024-06-18', 300000, NULL, NULL),
-(15, 15, 'Uluwatu Temple', '2024-06-19', 250000, NULL, NULL),
-(16, 16, '-', '2024-06-20', 0, NULL, NULL),
-(17, 17, 'Prambanan Temple', '2024-06-25', 250000, NULL, NULL),
-(18, 18, 'Borobudur Temple', '2024-06-26', 300000, NULL, NULL),
-(19, 19, 'Malioboro Street', '2024-06-27', 0, NULL, NULL),
-(20, 20, '-', '2024-06-28', 0, NULL, NULL),
-(21, 21, '-', '2024-07-05', 0, NULL, NULL),
-(22, 22, 'Gardens by the Bay', '2024-07-06', 500000, NULL, NULL);
+(1, 1, 'Pink Beach', '2024-07-01', 1000000, NULL, NULL),
+(2, 2, '-', '2024-07-02', 0, NULL, NULL),
+(3, 3, '-', '2024-07-03', 0, NULL, NULL),
+(4, 4, 'Nara Park', '2024-07-10', 500000, NULL, NULL),
+(5, 5, 'Todaiji Temple', '2024-07-11', 100000, NULL, NULL),
+(6, 6, 'Padar Island', '2024-08-01', 15000, NULL, NULL),
+(7, 7, 'Kanawa Island', '2024-08-02', 150000, NULL, NULL),
+(8, 8, 'Warebo Village', '2024-08-03', 100000, NULL, NULL),
+(9, 9, 'Myeongdong Shopping Street', '2024-08-10', 0, NULL, NULL),
+(10, 10, 'Gyeongbokgung Palace', '2024-08-11', 1000000, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -78,13 +66,6 @@ CREATE TABLE `booking` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`id`, `user_id`, `package_id`, `created_at`, `updated_at`) VALUES
-(11, 1, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -109,28 +90,16 @@ CREATE TABLE `flight_details` (
 --
 
 INSERT INTO `flight_details` (`id`, `package_details_id`, `airline_name`, `flight_number`, `departure_time`, `arrival_time`, `flight_class`, `created_at`, `updated_at`) VALUES
-(1, 1, 'JL123', 'Japan Airlines', '08:00', '14:00', 'Economy', NULL, NULL),
+(1, 1, 'ML123', 'Maldives Airlines', '08:00', '14:00', 'Economy', NULL, NULL),
 (2, 2, '-', '-', '-', '-', '-', NULL, NULL),
-(3, 3, 'JL124', 'Japan Airlines', '16:00', '22:00', 'Economy', NULL, NULL),
+(3, 3, 'ML124', 'Maldives Airlines', '16:00', '22:00', 'Economy', NULL, NULL),
 (4, 4, 'Garuda Indonesia', 'GA456', '09:00', '11:00', 'Business', NULL, NULL),
 (5, 5, 'Garuda Indonesia', 'GA457', '18:00', '20:00', 'Business', NULL, NULL),
-(6, 6, 'Air France', 'AF789', '10:00', '22:00', 'Economy', NULL, NULL),
+(6, 6, 'Air Asia', 'AA789', '10:00', '22:00', 'Economy', NULL, NULL),
 (7, 7, '-', '-', '-', '-', '-', NULL, NULL),
-(8, 8, 'Air France', 'AF790', '12.00', '24.00', 'Economy', NULL, NULL),
-(9, 9, 'Singapore Airlines', 'SQ987', '08:00', '10:00', 'Economy', NULL, NULL),
-(10, 10, 'Singapore Airlines', 'SQ988', '20:00', '22:00', 'Economy', NULL, NULL),
-(11, 11, 'Qantas', 'QF123', '09:00', '10:30', 'Economy', NULL, NULL),
-(12, 12, '-', '-', '-', '-', '-', NULL, NULL),
-(13, 13, 'Qantas', 'QF124', '18:00', '19;30', 'Economy', NULL, NULL),
-(14, 14, 'Air Asia', 'AA123', '10:00', '11:00', 'Economy', NULL, NULL),
-(15, 15, '-', '-', '-', '-', '-', NULL, NULL),
-(16, 16, 'Air Asia', 'AA456', '15:00', '16:00', 'Economy', NULL, NULL),
-(17, 17, 'Garuda Indonesia', 'GA135', '08:30', '09:30', 'Economy', NULL, NULL),
-(18, 18, '-', '-', '-', '-', '-', NULL, NULL),
-(19, 19, '-', '-', '-', '-', '-', NULL, NULL),
-(20, 20, 'Garuda Indonesia', 'GA246', '17:00', '18:30', 'Business', NULL, NULL),
-(21, 21, 'Singapore Airlines', 'SQ345', '18:00', '21:00', 'Business', NULL, NULL),
-(22, 22, 'Singapore Airlines', 'SQ890', '19:00', '22:00', 'Business', NULL, NULL);
+(8, 8, 'Air Asia', 'AA790', '12.00', '24.00', 'Economy', NULL, NULL),
+(9, 9, 'Korean Airlines', 'KR987', '08:00', '10:00', 'Economy', NULL, NULL),
+(10, 10, 'Korean Airlines', 'KR988', '20:00', '22:00', 'Economy', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -154,55 +123,16 @@ CREATE TABLE `hotel_details` (
 --
 
 INSERT INTO `hotel_details` (`id`, `package_details_id`, `hotel_name`, `address`, `room_type`, `room_number`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Hotel Tokyo 1', '123 Tokyo St', 'Double', 101, NULL, NULL),
-(2, 2, 'Hotel Tokyo 2', '456 Tokyo St', 'Family ', 102, NULL, NULL),
-(3, 3, 'Hotel Tokyo 3', '789 Tokyo St', 'Suite', 103, NULL, NULL),
-(4, 4, 'Hotel Bali 1', '123 Bali Rd', 'Double', 201, NULL, NULL),
-(5, 5, 'Hotel Bali 2', '456 Bali Rd', 'Suite', 202, NULL, NULL),
-(6, 6, 'Hotel Paris 1', '123 Paris Ave', 'Double', 301, NULL, NULL),
-(7, 7, 'Hotel Paris 2', '456 Paris Ave', 'Single', 302, NULL, NULL),
-(8, 8, 'Hotel Paris 3', '789 Paris Ave', 'Suite', 303, NULL, NULL),
-(9, 9, 'Hotel Bangkok 1', '123 Bangkok St', 'Double', 401, NULL, NULL),
-(10, 10, 'Hotel Bangkok 2', '456 Bangkok St', 'Suite', 402, NULL, NULL),
-(11, 11, 'Hotel Sydney 1', '123 Sydney Rd', 'Suite', 501, NULL, NULL),
-(12, 12, 'Hotel Sydney 2', '456 Sydney Rd', 'Single', 502, NULL, NULL),
-(13, 13, 'Hotel Sydney 3', '789 Sydney Rd', 'Double', 503, NULL, NULL),
-(14, 14, 'Grand Inna Kuta', 'Jl. Pantai Kuta No.1, Kuta, Bali', 'Deluxe', 601, NULL, NULL),
-(15, 15, 'Grand Inna Kuta', 'Jl. Pantai Kuta No.1, Kuta, Bali', 'Premium', 602, NULL, NULL),
-(16, 16, 'Grand Inna Kuta', 'Jl. Pantai Kuta No.1, Kuta, Bali', 'Suite', 603, NULL, NULL),
-(17, 17, 'Hyatt Regency Yogyakarta', 'Jl. Palagan Tentara Pelajar, Ngaglik, Sleman, Yogyakarta', 'Suite', 701, NULL, NULL),
-(18, 18, 'Hyatt Regency Yogyakarta', 'Jl. Palagan Tentara Pelajar, Ngaglik, Sleman, Yogyakarta', 'Suite', 701, NULL, NULL),
-(19, 19, 'Hyatt Regency Yogyakarta', 'Jl. Palagan Tentara Pelajar, Ngaglik, Sleman, Yogyakarta', 'Suite', 701, NULL, NULL),
-(20, 20, 'Hyatt Regency Yogyakarta', 'Jl. Palagan Tentara Pelajar, Ngaglik, Sleman, Yogyakarta', 'Suite', 701, NULL, NULL),
-(21, 21, 'Marina Bay Sands', '10 Bayfront Ave, Singapore', 'Deluxe', 801, NULL, NULL),
-(22, 22, 'Marina Bay Sands', '10 Bayfront Ave, Singapore', 'Deluxe', 801, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(22, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(23, '2024_05_24_062440_create_travel_agent_table', 1),
-(24, '2024_05_29_072123_create_package_table', 1),
-(25, '2024_05_29_072340_create_package_details_table', 1),
-(26, '2024_06_02_155830_create_hotel_details_table', 1),
-(27, '2024_06_02_155841_create_flight_details_table', 1),
-(28, '2024_06_02_155854_create_attraction_details_table', 1),
-(29, '2024_06_14_033817_create_user_table', 1),
-(30, '2024_06_14_033818_create_booking_table', 1);
+(1, 1, 'Hotel Maldives 1', '123 Maldives St', 'Double', 101, NULL, NULL),
+(2, 2, 'Hotel Maldives 2', '456 Maldives St', 'Family ', 102, NULL, NULL),
+(3, 3, 'Hotel Maldives 3', '789 Maldives St', 'Suite', 103, NULL, NULL),
+(4, 4, 'Hotel Japan 1', '123 Sta Rd', 'Double', 201, NULL, NULL),
+(5, 5, 'Hotel Japan 2', '456 Sta Rd', 'Single', 202, NULL, NULL),
+(6, 6, 'Hotel LBJ 1', '123 LBJ Str', 'Double', 301, NULL, NULL),
+(7, 7, 'Hotel LBJ 2', '456 LBJ Str', 'Single', 302, NULL, NULL),
+(8, 8, 'Hotel LBJ 3', '789 LBJ Str', 'Suite', 303, NULL, NULL),
+(9, 9, 'Hotel Seoul 1', '123 Seoul St', 'Double', 401, NULL, NULL),
+(10, 10, 'Hotel Seoul 2', '456 Seoul St', 'Suite', 402, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -229,14 +159,10 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`id`, `name`, `description`, `departure_date`, `return_date`, `number_of_people`, `quota`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Tokyo Delight', 'Enjoy a delightful 3-day trip to Tokyo with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 6, 16500000, 'tokyo_delight.jpg', NULL, NULL),
-(2, 'Bali Escape', 'A relaxing 2-day escape to Bali with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 11, 13200000, 'bali_escape.jpg', NULL, NULL),
-(3, 'Paris Adventure', 'A 3-day adventure in Paris with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 15, 33000000, 'paris_adventure.jpg', NULL, NULL),
-(4, 'Bangkok Getaway', 'A quick 2-day getaway to Bangkok with shopping and sightseeing', '2024-08-10', '2024-08-11', '2', 21, 14800000, 'bangkok_getaway.jpg', NULL, NULL),
-(5, 'Sydney Explorer', 'Explore Sydney over a 3-day period with visits to iconic spots.', '2024-09-01', '2024-09-03', '3', 26, 20000000, 'sydney_explorer.jpg', NULL, NULL),
-(6, 'Bali Retreat', 'Explore Bali including Tanah Lot and Uluwatu Temple', '2024-06-18', '2024-06-20', '2', 17, 8000000, 'bali_retreat.jpg', NULL, NULL),
-(7, 'Yogyakarta Journey', 'Discover Yogyakarta including Prambanan and Borobudur', '2024-06-25', '2024-06-28', '4', 12, 12000000, 'yogyakarta_journey.jpg', NULL, NULL),
-(8, 'Singapore Trip', 'Short trip to Singapore and visit Gardens by the Bay', '2024-07-05', '2024-07-06', '2', 7, 10000000, 'singapore_trip.jpg', NULL, NULL);
+(1, 'Maldives Honeymoon', 'Enjoy a delightful 3-day trip to Maldives with visits to popular attractions.', '2024-07-01', '2024-07-03', '2', 10, 20000000, 'maldives_honeymoon.jpg', NULL, NULL),
+(2, 'Japan Arcade', 'A relaxing 2-day escape to Japan with scenic views and cultural experiences.', '2024-07-10', '2024-07-11', '4', 15, 15200000, 'japan_arcade.jpg', NULL, NULL),
+(3, 'Labuan Bajo Escape', 'A 3-day adventure in Labuan Bajo with visits to iconic landmarks.', '2024-08-01', '2024-08-03', '2', 20, 6000000, 'labuan_bajo_escape.jpg', NULL, NULL),
+(4, 'Korea Sonata', 'A quick 2-day getaway to Korea with shopping and sightseeing', '2024-08-10', '2024-08-11', '3', 25, 15000000, 'korea_sonata.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -260,28 +186,16 @@ CREATE TABLE `package_details` (
 --
 
 INSERT INTO `package_details` (`id`, `package_id`, `day`, `description`, `origin_city`, `destination_city`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Depart from Surabaya and arrive in Tokyo. Visit Disney Land.', 'Surabaya', 'Tokyo', NULL, NULL),
-(2, 1, 2, 'Stay in Tokyo and visit Tokyo National Museum.', 'Tokyo', 'Tokyo', NULL, NULL),
-(3, 1, 3, 'Visit Ueno Park. Return to Surabaya.', 'Tokyo', 'Surabaya', NULL, NULL),
-(4, 2, 1, 'Depart from Jakarta and arrive in Bali. Visit Tanah Lot.', 'Jakarta', 'Bali', NULL, NULL),
-(5, 2, 2, 'Visit Uluwatu Temple. Return to Jakarta.', 'Bali', 'Jakarta', NULL, NULL),
-(6, 3, 1, 'Depart from New York and arrive in Paris. Visit Eiffel Tower.', 'New York', 'Paris', NULL, NULL),
-(7, 3, 2, 'Stay in Paris. Visit Louvre Museum.', 'Paris', 'Paris', NULL, NULL),
-(8, 3, 3, 'Visit Notre Dame. Return to New York.', 'Paris', 'New York', NULL, NULL),
-(9, 4, 1, 'Depart from Singapore and arrive in Bangkok. Visit Grand Palace.', 'Singapore', 'Bangkok', NULL, NULL),
-(10, 4, 2, 'Visit Chatuchak Market. Return to Singapore.', 'Bangkok', 'Singapore', NULL, NULL),
-(11, 5, 1, 'Depart from Melbourne and arrive in Sydney. Visit Sydney Opera House.', 'Melbourne', 'Sydney', NULL, NULL),
-(12, 5, 2, 'Stay in Sydney. Visit Bondi Beach.', 'Sydney', 'Sydney', NULL, NULL),
-(13, 5, 3, 'Visit Taronga Zoo. Return to Melbourne.', 'Sydney', 'Melbourne', NULL, NULL),
-(14, 6, 1, 'Flight from Surabaya to Bali and visit Tanah Lot', 'Surabaya', 'Bali', NULL, NULL),
-(15, 6, 2, 'Stay in Bali and visit Uluwatu Temple', 'Bali', 'Bali', NULL, NULL),
-(16, 6, 3, 'Flight back to Surabaya', 'Bali', 'Surabaya', NULL, NULL),
-(17, 7, 1, 'Flight from Jakarta to Yogyakarta and visit Prambanan Temple', 'Jakarta', 'Yogyakarta', NULL, NULL),
-(18, 7, 2, 'Stay in Yogyakarta and visit Borobudur Temple.', 'Yogyakarta', 'Yogyakarta', NULL, NULL),
-(19, 7, 3, 'Stay in Yogyakarta and explore Malioboro Street.', 'Yogyakarta', 'Yogyakarta', NULL, NULL),
-(20, 7, 4, 'Flight back to Jakarta', 'Yogyakarta', 'Jakarta', NULL, NULL),
-(21, 8, 1, 'Flight from Bandung to Singapore', 'Bandung', 'Jurong', NULL, NULL),
-(22, 8, 2, 'Visit Gardens by the Bay and flight back to Bandung', 'Jurong', 'Bandung', NULL, NULL);
+(1, 1, 1, 'Depart from Surabaya and arrive in Maldives. Visit Beach in Maldives.', 'Surabaya', 'Maldives City', NULL, NULL),
+(2, 1, 2, 'Stay in Maldives and Free Time.', 'Maldives', 'Maldives', NULL, NULL),
+(3, 1, 3, 'Free Time. Return to Surabaya.', 'Maldives', 'Surabaya', NULL, NULL),
+(4, 2, 1, 'Depart from Jakarta and arrive in Tokyo. Visit Nara Park.', 'Jakarta', 'Nara', NULL, NULL),
+(5, 2, 2, 'Visit Todaiji Temple. Return to Jakarta.', 'Nara', 'Jakarta', NULL, NULL),
+(6, 3, 1, 'Depart from Surabaya and arrive in Labuan Bajo. Visit Padar Island.', 'Surabaya', 'Labuan Bajo', NULL, NULL),
+(7, 3, 2, 'Visit Kanawa Island.', 'Labuan Bajo', 'Labuan Bajo', NULL, NULL),
+(8, 3, 3, 'Visit Warebo Village. Return to Surabaya', 'Labuan Bajo', 'Surabaya', NULL, NULL),
+(9, 4, 1, 'Depart from Jakarta and arrive in Seoul. Visit Myeongdong Shopping Street.', 'Jakarta', 'Seoul', NULL, NULL),
+(10, 4, 2, 'Visit Gyeongbokgung. Return to Jakarta.', 'Seoul', 'Jakarta', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -303,7 +217,7 @@ CREATE TABLE `travel_agent` (
 --
 
 INSERT INTO `travel_agent` (`id`, `name`, `email`, `phone_number`, `created_at`, `updated_at`) VALUES
-(1, 'Louis Tour', 'louistour@gmail.com', '08123456789', NULL, NULL);
+(1, 'Nicholas Tour', 'nicholastour@gmail.com', '081357924680', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -358,12 +272,6 @@ ALTER TABLE `hotel_details`
   ADD KEY `hotel_details_package_details_id_foreign` (`package_details_id`);
 
 --
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `package`
 --
 ALTER TABLE `package`
@@ -402,7 +310,7 @@ ALTER TABLE `attraction_details`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `flight_details`
@@ -415,12 +323,6 @@ ALTER TABLE `flight_details`
 --
 ALTER TABLE `hotel_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `package`
