@@ -107,7 +107,7 @@ class Database(DependencyProvider):
                 pool_size=10,
                 pool_reset_session=True,
                 host='mysql',
-                database='project_soa',
+                database='travel_agent_1',
                 user='root',
                 password='password'
             )

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function fetchBookingsData() {
-        const response = await fetch('http://localhost:8000/travel-agent-1/bookings', {
+        const response = await fetch('http://100.29.145.3:8007/travel-agent/bookings', {
             method: "GET"
         });
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         const bookingsContainer = document.querySelector('.bookings');
         bookingsContainer.innerHTML = '';  // Clear any previous bookings
@@ -43,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p><strong>Departure Date : </strong> ${dateFormatter(bookings.departure_date)}</p>
                         <p><strong>Return Date : </strong> ${dateFormatter(bookings.return_date)}</p>
                         <p><strong>Number Of People : </strong> ${bookings.number_of_people}</p>
-                        <p><strong>Quota : </strong> ${bookings.quota}</p>
-                        <p><strong>Price : </strong> ${bookings.price}</p>
+                        <p><strong>Price : </strong> Rp${bookings.price.toLocaleString('id-ID')}</p>
                     </div>
                 `;
                 bookingsContainer.appendChild(bookingItem);
@@ -56,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const myBooking = document.querySelector('#my-bookings');
     myBooking.addEventListener('click', fetchBookingsData);
-
 
     async function fetchPackagesData() {
         try {
@@ -70,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
             let response;
 
             if (originCity == null || destinationCity == null || minimimNumberOfPerson == null || departureDate == null || returnDate == null) {
-                response = await fetch('http://localhost:8000/travel-agent-1/packages', {
+                response = await fetch('http://100.29.145.3:8007/travel-agent/packages', {
                     method: "GET"
                 });
             } else {
-                response = await fetch(`http://localhost:8000/travel-agent-1/filter?origin_city=${originCity}&destination_city=${destinationCity}&number_of_people=${minimimNumberOfPerson}&departure_date=${departureDate}&return_date=${returnDate}`, {
+                response = await fetch(`http://100.29.145.3:8007/travel-agent/filter?origin_city=${originCity}&destination_city=${destinationCity}&number_of_people=${minimimNumberOfPerson}&departure_date=${departureDate}&return_date=${returnDate}`, {
                     method: "GET",
                 });
             }
@@ -118,15 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 cardContainer[0].innerHTML = temp;
             }
-
-
         } catch (error) {
             console.error('Error fetching package details data:', error);
             return null;
         }
     }
-
-   
 
     fetchPackagesData().then(function () {
         detailBtn = document.querySelectorAll('.detail-button');
@@ -148,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (result.isConfirmed) {
                         const id_package = this.getAttribute('data-package')
 
-                        const response = await fetch(`http://localhost:8000/travel-agent-1/book`, {
+                        const response = await fetch(`http://100.29.145.3:8007/travel-agent/book`, {
                             method: "POST",
                             body: JSON.stringify({
                                 user_id: "1",
@@ -168,46 +162,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        
-        // async function fetchBookingsData() {
-        //     try {
-        //         const response = await fetch(`http://localhost:8000/travel-agent-1/bookings`, {
-        //             method: "GET"
-        //         });
-        //         console.log(response);
-    
-        //         if (!response.ok) {
-        //             throw new Error(`HTTP error! Status: ${response.status}`);
-        //         }
-    
-        //         const data = await response.json();
-               
-        //         
-    
-        //         data.forEach(bookings=>{
-        //             bookingItem.innerHTML = `
-        //             <div class="booking-details">
-        //                 <p><strong>Name : </strong> ${bookings.name}</p>
-        //                 <p><strong>Description : </strong> ${bookings.description}</p>
-        //                 <p><strong>Departure Date : </strong> ${dateFormatter(bookings.departure_date)}</p>
-        //                 <p><strong>Return Date : </strong> ${dateFormatter(bookings.return_date)}</p>
-        //                 <p><strong>Number Of People : </strong> ${bookings.number_of_people}</p>
-        //                 <p><strong>Quota</strong> ${bookings.quota}</p>
-        //                 <p><strong>Price</strong> ${bookings.price}</p>
-        //             </div>
-        //         `;
-        //         })
-        //     } catch (error) {
-        //         console.error('Error fetching booking data:', error);
-        //     }
-        // }
-    
-
         detailBtn.forEach(element => {
             element.addEventListener("click", async function () {
                 const packageId = this.getAttribute('data-package');
                 // console.log(packageId);
-                const response = await fetch(`http://localhost:8000/travel-agent-1/package_details/${packageId}`, {
+                const response = await fetch(`http://100.29.145.3:8007/travel-agent/package_details/${packageId}`, {
                     method: "GET"
                 });
                 if (!response.ok) {
@@ -289,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             confirmButtonText: "Buy",
                         }).then(async (result) => {
                             if (result.isConfirmed) {
-                                const response = await fetch(`http://localhost:8000/travel-agent-1/book`, {
+                                const response = await fetch(`http://100.29.145.3:8007/travel-agent/book`, {
                                     method: "POST",
                                     body: JSON.stringify({
                                         user_id: "1",
@@ -307,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         });
                     });
-
                 });
 
                 window.addEventListener('click', function (event) {
