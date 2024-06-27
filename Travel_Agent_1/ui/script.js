@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    localStorage.setItem("userID", 1);
+    // localStorage.setItem("userID", 1);
     let userID = localStorage.getItem("userID")
 
     function dateFormatter(date) {
