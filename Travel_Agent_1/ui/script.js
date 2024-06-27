@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    localStorage.setItem("userID", 2);
+    localStorage.setItem("userID", 1);
     let userID = localStorage.getItem("userID")
 
     function dateFormatter(date) {
@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }).then(async (result) => {
                     if (result.isConfirmed) {
                         const id_package = this.getAttribute('data-package')
+                        console.log(userID.toString());
 
                         const response = await fetch(`http://3.210.234.45:8003/travel-agent/book`, {
                             method: "POST",

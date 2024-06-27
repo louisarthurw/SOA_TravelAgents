@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }).then(async (result) => {
                     if (result.isConfirmed) {
                         const id_package = this.getAttribute('data-package')
+                        console.log(userID.toString());
 
                         const response = await fetch(`http://174.129.21.218:8005/travel-agent/book`, {
                             method: "POST",
