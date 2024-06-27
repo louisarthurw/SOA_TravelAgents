@@ -47,9 +47,9 @@ class GatewayService2:
         package_detail_by_day = self.travel_agent_rpc2.get_package_detail_by_day(package_id, day)
         return (200, self.header, json.dumps(package_detail_by_day))
     
-    @http('GET', '/travel-agent/bookings')
-    def get_my_booking(self,request):
-        my_booking = self.travel_agent_rpc2.get_my_booking()
+    @http('GET', '/travel-agent/bookings/<int:user_id>')
+    def get_my_booking(self,request, user_id):
+        my_booking = self.travel_agent_rpc2.get_my_booking(user_id)
         return (200, self.header, json.dumps(my_booking))
     
     @http('POST', '/travel-agent/book')

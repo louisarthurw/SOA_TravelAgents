@@ -36,10 +36,10 @@ class DatabaseWrapper:
         cursor.close()
         return [self.convert_dates_to_strings(row) for row in result]
     
-    def get_my_booking(self):
+    def get_my_booking(self, user_id):
         cursor = self.connection.cursor(dictionary=True)
-        sql = "SELECT * FROM booking b LEFT JOIN package p ON b.package_id = p.id WHERE p.id = b.package_id"
-        cursor.execute(sql)
+        sql = "SELECT * FROM booking b LEFT JOIN package p ON b.package_id = p.id WHERE b.package_id = %s"
+        cursor.execute(sql, (user_id,))
         result = cursor.fetchall()
         cursor.close()
         return [self.convert_dates_to_strings(row) for row in result]

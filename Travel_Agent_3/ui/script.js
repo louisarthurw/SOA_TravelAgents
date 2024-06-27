@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    localStorage.setItem("userID", 1);
+    let userID = localStorage.getItem("userID")
+
     function dateFormatter(date) {
         const datee = new Date(date);
         const day = datee.getDate().toString().padStart(2, '0');
@@ -9,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function fetchBookingsData() {
-        const response = await fetch('http://100.29.145.3:8007/travel-agent/bookings', {
+        const response = await fetch(`http://100.29.145.3:8007/travel-agent/bookings/${userID}`, {
             method: "GET"
         });
 
@@ -145,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         const response = await fetch(`http://100.29.145.3:8007/travel-agent/book`, {
                             method: "POST",
                             body: JSON.stringify({
-                                user_id: "1",
+                                user_id: userID.toString(),
                                 package_id: id_package
                             })
                         });
@@ -202,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             <p>Hotel: ${currentDayData.hotel_name}</p>
                             <p>Address: ${currentDayData.address}</p>
                             <p>Room Type: ${currentDayData.room_type}</p>
-                            <p>Room Number: ${currentDayData.room_number}</p>
                             <br>
                             <h4>Flight Details</h5>
                             <p>Airline: ${currentDayData.airline_name}</p>
@@ -251,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 const response = await fetch(`http://100.29.145.3:8007/travel-agent/book`, {
                                     method: "POST",
                                     body: JSON.stringify({
-                                        user_id: "1",
+                                        user_id: userID.toString(),
                                         package_id: packageId
                                     })
                                 });

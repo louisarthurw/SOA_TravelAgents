@@ -42,8 +42,8 @@ class TravelAgent3:
         booking = self.database.add_booking(user_id, package_id)
         return booking
     @rpc
-    def get_my_booking(self):
-        booking = self.database.get_my_booking()
+    def get_my_booking(self, user_id):
+        booking = self.database.get_my_booking(user_id)
         return booking
     @rpc
     def filter(self, origin_city, destination_city, number_of_people, departure_date, return_date):
