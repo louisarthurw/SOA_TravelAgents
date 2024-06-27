@@ -220,28 +220,6 @@ INSERT INTO `travel_agent` (`id`, `name`, `email`, `phone_number`, `created_at`,
 (1, 'Timothy Tour', 'timothytour@gmail.com', '082468013579', NULL, NULL);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL);
-
---
--- Indexes for dumped tables
---
-
 --
 -- Indexes for table `attraction_details`
 --
@@ -254,7 +232,6 @@ ALTER TABLE `attraction_details`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `booking_user_id_foreign` (`user_id`),
   ADD KEY `booking_package_id_foreign` (`package_id`);
 
 --
@@ -289,16 +266,6 @@ ALTER TABLE `package_details`
 --
 ALTER TABLE `travel_agent`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `attraction_details`
@@ -343,16 +310,6 @@ ALTER TABLE `travel_agent`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
 -- Constraints for table `attraction_details`
 --
 ALTER TABLE `attraction_details`
@@ -362,8 +319,7 @@ ALTER TABLE `attraction_details`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_package_id_foreign` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `booking_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `booking_package_id_foreign` FOREIGN KEY (`package_id`) REFERENCES `package` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `flight_details`
